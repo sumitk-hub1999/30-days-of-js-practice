@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "wes", year: 1988 },
+        { name: "tomato", year: 1978 },
+        { name: "potato", year: 1968 },
+        { name: "avocado", year: 1948 },
+      ];
+      const comments = [
+        { text: "wes", id: 1988 },
+        { text: "tomato", id: 1978 },
+        { text: "potato", id: 1968 },
+        { text: "avocado", id: 1948 },
+      ];
+
+      const isOld = people.some(
+        (person) => new Date().getFullYear() - person.year >= 60
+      );
+      const isOld2 = people.every(
+        (person) => new Date().getFullYear() - person.year >= 60
+      );
+      console.log({ isOld });
+      console.log({ isOld2 });
+
+      const comment = comments.find((comment) => comment.id === 1948);
+      console.log({ comment });
+
+      const index = comments.findIndex((comment) => comment.id === 1948);
+      console.log(index);
+
+      //comments.splice(index, 1);
+
+      // console.log(comments);
+      const newComments = [
+        ...comments.slice(0, index),
+        ...comments.slice(index + 1),
+      ];
+    </script>
+  </body>
+</html>

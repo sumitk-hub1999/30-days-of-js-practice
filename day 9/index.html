@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p onclick="makeGreen()">xBREAKxDownx</p>
+    <script>
+      const dogs = [
+        { name: "snickers", age: 2 },
+        { name: "sheru", age: 1 },
+      ];
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
+
+      console.log("%s", "💦");
+      console.warn("oh hell no");
+      console.error("get a life");
+      console.info("you need to lose weight");
+      console.assert("1===1", "wrong");
+      const p = document.querySelector("p");
+      console.dir(p);
+
+      dogs.forEach((dog) => {
+        console.group(`${dog.name}`);
+        console.log(`${dog.name}`);
+        console.groupEnd(`${dog.name}`);
+      });
+
+      console.time("fetching data");
+      fetch("https://api.github.com/users/sumitk-hub1999")
+        .then((data) => data.json())
+        .then((data) => {
+          console.timeEnd("fetching data");
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>
